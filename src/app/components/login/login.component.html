@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col">
+    <h1 class="text-center bg-warning m-5 p-2">Login form</h1>
+  </div>
+</div>
+<div class="row justify-content-center">
+ 
+  <div class="col-sm-5 col-10 loginbox">
+   
+    <form [formGroup]="userdata">
+      <input type="email" class="form-control m-2 p-2" placeholder="email" formControlName="email" value="AmazingAsim3000@gmail.com" required email="true">
+    
+      <span class="error" *ngIf="userdata.controls['email'].dirty && userdata.controls['email'].invalid">
+        email is required
+      </span>
+      <input type="password" class="form-control m-2 p-2" placeholder="password" formControlName="password" value="AmazingAsim3haha" required>
+    
+      <span class="error" *ngIf="userdata.controls['password'].dirty && userdata.controls['password'].invalid">
+        please enter password
+      </span>
+      <button class="btn m-1"  (click)="login(userdata)" [disabled]="!userdata.valid">submit</button> <br>
+      <span class="text-small">Don't have an account ?</span>
+      <a routerLink="../signup"  class="btn btn-dark m-3 p-1">Signup</a>
+    </form>
+  </div>
+</div>

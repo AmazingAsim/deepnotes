@@ -1,0 +1,14 @@
+nav ul{
+    display: flex;
+    
+    
+}
+
+.btn-lg{
+    width: 100%;
+    background-color: rgb(235, 233, 233);
+    margin-bottom: 5px;
+    color:rgb(30, 36, 0);
+    border: 2px solid black;
+    border-radius: 10px;
+}

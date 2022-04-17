@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col">
+    <h1 class="text-center bg-warning m-5 p-2">sigup form</h1>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-sm-4 col-10 signinbox">
+
+  
+  
+  <form [formGroup]="userdata">
+
+  <div class="inputbox">
+    <label for="" class="m-2 p-2"><strong>USERNAME</strong></label>
+    <input type="text" class="form-control m-2 p-2" placeholder="username" formControlName="username" value="" required>  
+  </div>
+
+  <small class="error" *ngIf="userdata.controls['username'].dirty && userdata.controls['username'].invalid">
+    username is required
+  </small>
+
+    <div class="inputbox">
+      <label for="" class="m-2 p-2"><strong>E-MAIL</strong></label>
+      <input type="email" class="form-control m-2 p-2" placeholder="email" formControlName="email" value="" required email="true">
+    </div>
+
+  <small class="error" *ngIf="userdata.controls['email'].dirty && userdata.controls['email'].invalid">
+    email is required
+  </small>
+
+    <div class="inputbox">
+      <label for="" class="m-2 p-2"><strong>PASSWORD</strong></label>
+       <input type="password" class="form-control m-2 p-2" placeholder="password" formControlName="password" value="" required>
+    </div>
+  <small class="error" *ngIf="userdata.controls['password'].dirty && userdata.controls['password'].invalid">
+    please enter password
+  </small>
+   <div class="inputbox">
+     <label for="" class="m-2 p-2"><strong>CONFIRM</strong></label>
+     <input type="text" id="confirm" class="form-control m-2 p-2" placeholder="confirm password" required>
+    </div>
+  <small id="message" class="{{message}}"></small><br>
+  <div class="submitbutton">
+    
+    <button class="btn m-1 btn-success"  (click)="signup()" [disabled]="userdata.invalid ||crosscheckerror">submit</button> 
+  </div>
+  
+  <div class="loginbutton">
+    
+    <small class="text-small">already have an account ?</small>
+    <button routerLink="../login" class="btn btn-warning p-2 m-2">Login</button>
+  </div>
+
+
+  
+</form>
+
+
+</div>
+</div>
